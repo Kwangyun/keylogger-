@@ -1,3 +1,3 @@
 # keylogger-
-A keylogger that saves what a user typed
+A basic keylogger function. When executed texts are appended to result.txt
   
