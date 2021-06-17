@@ -1,3 +1,7 @@
 {
-    "workbench.panel.defaultLocation": "right"
+    "workbench.panel.defaultLocation": "right",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "files.associations": {
+        "iosfwd": "cpp"
+    }
 }
